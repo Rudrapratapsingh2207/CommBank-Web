@@ -51,3 +51,13 @@ export async function updateGoal(goalId: string, updatedGoal: Goal): Promise<boo
     return false
   }
 }
+
+export async function updateGoalIcon(goalId: string, icon: string): Promise<boolean> {
+  try {
+    await axios.patch(`${API_ROOT}/api/Goal/${goalId}/icon`, { icon })
+    return true
+  } catch (error: any) {
+    return false
+  }
+}
+
